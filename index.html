@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistem Absensi Karyawan Pabrik</title>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Sistem Absensi Karyawan Pabrik</h1>
+
+      <!-- Form Absensi -->
+      <form id="attendance-form">
+        <label for="employee-id">ID Karyawan:</label>
+        <input
+          type="text"
+          id="employee-id"
+          placeholder="Masukkan ID Karyawan"
+          required
+        />
+
+        <label for="attendance-time">Waktu Absensi:</label>
+        <input type="datetime-local" id="attendance-time" required />
+
+        <button type="submit" id="attendance-button">Absen Masuk</button>
+      </form>
+
+      <!-- Status Absensi -->
+      <div id="attendance-status"></div>
+
+      <!-- Laporan Absensi -->
+      <h2>Laporan Absensi</h2>
+      <table id="attendance-report">
+        <thead>
+          <tr>
+            <th>ID Karyawan</th>
+            <th>Waktu Absensi</th>
+            <th>Status Absensi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Data absensi akan ditambahkan di sini -->
+        </tbody>
+      </table>
+
+      <!-- QR Code untuk Karyawan -->
+      <h2>QR Code Absensi</h2>
+      <div id="qrcode"></div>
+
+      <!-- Scanner QR Code -->
+      <h2>Scan QR Code untuk Absensi</h2>
+      <div id="qr-reader" style="width: 300px; height: 300px"></div>
+      <div id="qr-result"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
